@@ -43,6 +43,12 @@ const HTTP_PORT = process.env.PORT || 8080;
 // ----------------------------------
 // Url endpoints
 // ----------------------------------
+
+//Get 
+app.get("/", (req, res) => { 
+    res.send("please search /api/animals too see the list of animals")
+})
+
 // GET ALL
 app.get("/api/animals", (req, res) => {
     // 1. search the database for students and return them
