@@ -55,6 +55,7 @@ app.get("/api/animals", (req, res) => {
     Animal.find().exec().then(
         (results) => {
             console.log(results)
+            res.status(200)
             res.send(results)
         }
     ).catch(
@@ -72,6 +73,7 @@ app.get("/api/animals/:name", (req,res) => {
     Animal.find({'name':req.params.name}).exec().then(
       (specificResult) => {
           console.log(specificResult)
+          res.status(200)
           res.send(specificResult) }
     ).catch(
       () => {
@@ -90,6 +92,7 @@ app.post("/api/animals", (req, res) => {
     a1.save().then(
         (insertedResults) => {
             console.log("Item was inserted")
+            res.status(201)
             res.send(insertedResults)
         }
     ).catch(
@@ -108,6 +111,7 @@ app.put("/api/animals", (req,res) => {
     
     
             console.log("the method to update will implemendted in the future")
+            res.status(501)
             res.send("the method to update will implemendted in the future")
      
 })
@@ -117,6 +121,7 @@ app.delete("/api/animals/:name", (req,res) => {
     Animal.findOneAndDelete({'name':req.params.name}).exec().then(
         () => {
             console.log("Item was deleted")
+            res.status(200)
             res.send("Item was deleted") }
 
     ).catch(
