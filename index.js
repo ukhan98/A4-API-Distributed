@@ -29,7 +29,7 @@ const AnimalSchema = new Schema({
    goldPerTurn:Number 
 })
 
-const Animal = mongoose.model("animals_table", AnimalSchema)
+const Animal = mongoose.model("animals_tables", AnimalSchema)
 
 
 // ----------------------------------
